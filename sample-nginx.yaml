@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sample-nginx
+  name: sample-nginx
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: sample-nginx
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sample-nginx
+    spec:
+      containers:
+      - image: bitnami/nginx
+        name: nginx
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
